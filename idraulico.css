@@ -78,6 +78,64 @@
     color: var(--primary-color);
 }
 
+/*CANTIERE*/
+
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona del menu (hamburger icon) */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: none ; /* Nasconde il menu per dispositivi più piccoli */
+        flex-direction: column; /* Imposta la direzione a colonna */
+        width: 100vw; /* Larghezza completa */
+        background-color: var(--secondary-color); /* Colore di sfondo */
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona del menu sui dispositivi più piccoli */
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex ; /* Mostra il menu quando il checkbox è selezionato */
+    }
+
+    .menu > ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu > ul>li{
+
+        width: 100%;
+        border: 2px solid var(--text-color-2);
+
+        text-align: center;
+        padding: 8%;
+    }
+
+}
+/*FINE CANTIERE*/
+
                             /*HERO*/
 .hero{
     display: flex;
@@ -225,7 +283,17 @@ footer {
 .container-servizi > div > p{
     text-align: center;
 }
-
+@media (max-width: 768px){
+    .container-servizi{
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    .container-servizi > div{
+        width: 90vw;
+    }
+}
                                     /*CHI SIAMO*/
 
 .container-chi-siamo{
@@ -293,7 +361,7 @@ footer {
 }
 .contact-section > .h1{
     display: flex;
-    flew-wrap: nowrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     margin-bottom: 10vh;
